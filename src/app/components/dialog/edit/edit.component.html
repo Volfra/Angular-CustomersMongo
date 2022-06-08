@@ -1,0 +1,88 @@
+<div class="container">
+    <!-- <h3 mat-dialog-title>_id: {{data._id}}</h3> -->
+    <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="name" [(ngModel)]="data.name" name="name" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>    
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" maxlength="2" placeholder="age" [(ngModel)]="data.age" name="age" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div> 
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <mat-label>gender</mat-label>
+            <mat-select [(value)]="data.gender" required>
+                <mat-option value="male">male</mat-option>
+                <mat-option value="female">female</mat-option>
+            </mat-select>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div> 
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="email" [(ngModel)]="data.email" name="email" required>
+            <mat-error *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div> 
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" maxlength="8" placeholder="balance" [(ngModel)]="data.balance" name="balance" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div> 
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="company" [(ngModel)]="data.company" name="company" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div> 
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="address" [(ngModel)]="data.address" name="address" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div> 
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="phone" [(ngModel)]="data.phone" name="phone" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div> 
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" maxlength="6" placeholder="salary" [(ngModel)]="data.salary" name="salary" >
+            <span matPrefix>$ &nbsp;</span>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="form">
+        <div *ngFor="let idObj of data.skills | keyvalue; let i = index">
+            <mat-form-field color="accent">         
+                <input matInput #input class="form-control" placeholder="{{idObj.key}}" [(ngModel)]="idObj.value" name="skill{{i}}"
+                (change)="changeValue(idObj.key, idObj.value)">
+                <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>        
+        </div>
+    </div> 
+
+    <div mat-dialog-actions>
+        <button mat-button type="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="save()">Save</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+      </div>
+    </form>
+  </div>

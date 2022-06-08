@@ -1,0 +1,48 @@
+<div class="container">
+    <!-- <h3 mat-dialog-title>_id: {{data._id}}</h3> -->
+    <form class="mat-dialog-content"  #formControl="ngForm"> 
+
+    <div class="form" appearance="none">
+        <mat-label class="colorLbl">Company</mat-label> 
+        <br>
+        <mat-label> {{data.company}} </mat-label>
+    </div>    
+
+    <br>
+    <div class="form" appearance="none">
+        <mat-label class="colorLbl">Address</mat-label> 
+        <br>
+        <mat-label> {{data.address}} </mat-label>
+    </div>  
+
+    <br>
+    <div class="form" appearance="none">
+        <mat-label class="colorLbl">Phone</mat-label> 
+        <br>
+        <mat-label> {{data.phone}} </mat-label>  
+    </div>
+
+    <br>
+    <div class="form" appearance="none">
+        <mat-label class="colorLbl">Salary</mat-label> 
+        <br>
+        <mat-label> $ {{data.salary}} </mat-label>  
+    </div>
+
+    <br>
+    <div class="form" appearance="none">
+        <mat-label class="colorLbl">Skills</mat-label> 
+        <br>
+        <tr *ngFor="let idObj of data.skills | keyvalue">
+            <td>{{idObj.key}} : {{idObj.value}}</td>
+        </tr>
+    </div>
+
+    <br>
+    <button mat-icon-button (click)="onNoClick()" tabindex="-1">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+      
+    </form>
+  </div>
+
