@@ -11,8 +11,8 @@
 
     <div class="form">
         <mat-form-field color="accent">
-            <input matInput #input class="form-control" maxlength="2" placeholder="age" [(ngModel)]="data.age" name="age" required >
-            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            <input matInput #input [formControl]="ageControl" class="form-control" maxlength="2" placeholder="age" [(ngModel)]="data.age" name="age" required >
+            <mat-error *ngIf="ageControl.invalid">{{getErrorMessageAge()}}</mat-error>
         </mat-form-field>
     </div> 
 
@@ -29,15 +29,15 @@
 
     <div class="form">
         <mat-form-field color="accent">
-            <input matInput #input class="form-control" placeholder="email" [(ngModel)]="data.email" name="email" required >
-            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            <input matInput #input [formControl]="emailControl" class="form-control" placeholder="email" [(ngModel)]="data.email" name="email" required>
+            <mat-error *ngIf="emailControl.invalid">{{getErrorMessageEmail()}}</mat-error>
         </mat-form-field>
     </div> 
 
     <div class="form">
         <mat-form-field color="accent">
-            <input matInput #input class="form-control" maxlength="8" placeholder="balance" [(ngModel)]="data.balance" name="balance" required >
-            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            <input matInput #input [formControl]="decimalControl" class="form-control" maxlength="9" placeholder="balance" [(ngModel)]="data.balance" name="balance" required >
+            <mat-error *ngIf="decimalControl.invalid">{{getErrorMessageDecimal()}}</mat-error>
         </mat-form-field>
     </div> 
 
@@ -57,18 +57,18 @@
 
     <div class="form">
         <mat-form-field color="accent">
-            <input matInput #input class="form-control" placeholder="phone" [(ngModel)]="data.phone" name="phone" required >
-            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            <input matInput #input [formControl]="phoneControl" class="form-control" placeholder="phone" [(ngModel)]="data.phone" name="phone" required >
+            <mat-error *ngIf="phoneControl.invalid">{{getErrorMessagePhone()}}</mat-error>
         </mat-form-field>
     </div> 
 
     <div class="form">
         <mat-form-field color="accent">
-            <input matInput #input class="form-control" maxlength="6" placeholder="salary" [(ngModel)]="data.salary" name="salary" >
+            <input matInput #input [formControl]="integerControl" class="form-control" maxlength="6" placeholder="salary" [(ngModel)]="data.salary" name="salary" >
             <span matPrefix>$ &nbsp;</span>
-            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            <mat-error *ngIf="integerControl.invalid">{{getErrorMessageInteger()}}</mat-error>
         </mat-form-field>
-    </div>
+    </div>    
 
     <div class="form">
         <mat-form-field color="accent">
@@ -92,7 +92,7 @@
     </div> 
 
     <div mat-dialog-actions>
-        <button mat-button type="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="save()">Save</button>
+        <button mat-button type="submit" [disabled]="!formControl.valid || !emailControl.valid || !ageControl.valid || !phoneControl.valid || !integerControl.valid || !decimalControl.valid" [mat-dialog-close]="1" (click)="save()">Save</button>
         <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
       </div>
     </form>

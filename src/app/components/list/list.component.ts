@@ -197,8 +197,6 @@ export class ListComponent implements OnInit {
         customer.skills['education'] = dialogRef.componentInstance.data.skillEducation;
         customer.skills['languages'] = dialogRef.componentInstance.data.skillLanguages;
 
-        console.log('here->',customer)
-
         this.bankService.create(customer).subscribe(
           (customer) => {
             this.retrieveCustomers();
