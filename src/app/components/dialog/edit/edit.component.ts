@@ -28,10 +28,16 @@ export class EditComponent implements OnInit {
   formControl = new FormControl('',Validators.required);
   emailControl = new FormControl('', [Validators.required,
                   Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]);
-  ageControl = new FormControl('',  [Validators.required, Validators.min(18), Validators.max(80)]);
+  ageControl = new FormControl('',  [Validators.required, 
+                  Validators.min(18), 
+                  Validators.max(80), 
+                  Validators.pattern(/^\d{1,2}$/)]);
   phoneControl = new FormControl('',[Validators.required, 
                   Validators.pattern(/^\+\d{1,3}\s\(\d{1,3}\)\s\d{3}-\d{4}$/)]);
-  
+  integerControl = new FormControl('', [Validators.pattern(/^\d{1,6}$/)]);
+  decimalControl = new FormControl('', [Validators.required,
+                    Validators.pattern(/^\d{1,6}(.\d{0,2})?$/)]);
+
   getErrorMessage() {
     return  this.formControl.errors['required'] ? 'Required field': ''; 
   }
@@ -42,7 +48,8 @@ export class EditComponent implements OnInit {
   }
 
   getErrorMessageAge() {
-    return  this.ageControl.errors['min'] ? 'Age should be > 17': 
+    return  this.ageControl.errors['pattern'] ? 'Only numbers':
+            this.ageControl.errors['min'] ? 'Age should be > 17': 
             this.ageControl.errors['max'] ? 'Age should be < 81':
             this.ageControl.errors['required'] ? 'Required field age': '';
   }
@@ -50,6 +57,15 @@ export class EditComponent implements OnInit {
   getErrorMessagePhone() {
     return  this.phoneControl.errors['pattern'] ? 'Format phone +XXX (XXX) XXX-XXXX': 
             this.phoneControl.errors['required'] ? 'Required field phone': '';
+  }
+
+  getErrorMessageInteger() {
+    return  this.integerControl.errors['pattern'] ? 'Only numbers': '';
+  }
+
+  getErrorMessageDecimal() {
+    return  this.decimalControl.errors['pattern'] ? 'Only numbers / Format XXXXXX.XX ': 
+            this.decimalControl.errors['required'] ? 'Required field': '';
   }
 
   changeValue(key, newValue) {
