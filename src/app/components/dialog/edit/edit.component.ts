@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, PatternValidator, RequiredValidator, Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -25,17 +25,31 @@ export class EditComponent implements OnInit {
   save(): void {
   }
 
-  userForm = new FormGroup({
-    formControl : new FormControl('',[Validators.required]),
-    emailControl: new FormControl('',[Validators.required,
-      Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-    ageControl: new FormControl('',  [Validators.min(18), Validators.max(90)])
-  });
-
+  formControl = new FormControl('',Validators.required);
+  emailControl = new FormControl('', [Validators.required,
+                  Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]);
+  ageControl = new FormControl('',  [Validators.required, Validators.min(18), Validators.max(80)]);
+  phoneControl = new FormControl('',[Validators.required, 
+                  Validators.pattern(/^\+\d{1,3}\s\(\d{1,3}\)\s\d{3}-\d{4}$/)]);
+  
   getErrorMessage() {
-    console.log(this.userForm.get('emailControl').value)
-    return this.userForm.get('emailControl').value ? 'Required field': 
-            this.userForm.get('emailControl').value.pattern ? 'Please enter a valid email address': '';
+    return  this.formControl.errors['required'] ? 'Required field': ''; 
+  }
+
+  getErrorMessageEmail() {
+    return  this.emailControl.errors['pattern'] ? 'Please enter a valid email address': 
+            this.emailControl.errors['required'] ? 'Required field email': '';
+  }
+
+  getErrorMessageAge() {
+    return  this.ageControl.errors['min'] ? 'Age should be > 17': 
+            this.ageControl.errors['max'] ? 'Age should be < 81':
+            this.ageControl.errors['required'] ? 'Required field age': '';
+  }
+
+  getErrorMessagePhone() {
+    return  this.phoneControl.errors['pattern'] ? 'Format phone +XXX (XXX) XXX-XXXX': 
+            this.phoneControl.errors['required'] ? 'Required field phone': '';
   }
 
   changeValue(key, newValue) {

@@ -113,23 +113,25 @@ export class ListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       
-      customer.name = dialogRef.componentInstance.data.name
-      customer.age = dialogRef.componentInstance.data.age
-      customer.gender = dialogRef.componentInstance.data.gender
-      customer.email = dialogRef.componentInstance.data.email
-      customer.balance = dialogRef.componentInstance.data.balance
-      customer.company = dialogRef.componentInstance.data.company 
-      customer.address = dialogRef.componentInstance.data.address
-      customer.phone = dialogRef.componentInstance.data.phone
-      customer.salary = dialogRef.componentInstance.data.salary
-      customer.skills = dialogRef.componentInstance.data.skills
-
       if (result === 1) {
+
+        customer.name = dialogRef.componentInstance.data.name
+        customer.age = dialogRef.componentInstance.data.age
+        customer.gender = dialogRef.componentInstance.data.gender
+        customer.email = dialogRef.componentInstance.data.email
+        customer.balance = dialogRef.componentInstance.data.balance
+        customer.company = dialogRef.componentInstance.data.company 
+        customer.address = dialogRef.componentInstance.data.address
+        customer.phone = dialogRef.componentInstance.data.phone
+        customer.salary = dialogRef.componentInstance.data.salary
+        customer.skills = dialogRef.componentInstance.data.skills
+
         this.bankService.update(customer._id, customer).subscribe(
-          (customer) => {
-            console.log(customer);
-          })
+            (customer) => {
+              console.log('Customer updated:',customer);
+            })
       }
+
     });
 
   }
@@ -145,7 +147,7 @@ export class ListComponent implements OnInit {
         this.bankService.delete(customer._id).subscribe(
           (customer) => {
             this.retrieveCustomers();
-            console.log(customer);
+            console.log('Customer deleted:',customer);
           })
       }
     });
@@ -176,30 +178,31 @@ export class ListComponent implements OnInit {
     var customer : Customer = new Customer();
     dialogRef.afterClosed().subscribe(result => {
 
-      console.log(dialogRef.componentInstance.data)
-      customer.name = dialogRef.componentInstance.data.name
-      customer.age = dialogRef.componentInstance.data.age
-      customer.gender = dialogRef.componentInstance.data.gender
-      customer.email = dialogRef.componentInstance.data.email
-      customer.balance = dialogRef.componentInstance.data.balance
-      customer.company = dialogRef.componentInstance.data.company
-      customer.address = dialogRef.componentInstance.data.address
-      customer.phone = dialogRef.componentInstance.data.phone
-      customer.salary = dialogRef.componentInstance.data.salary
-
-      //Map skills
-      customer.skills = new Map();
-      customer.skills['job'] = dialogRef.componentInstance.data.skillJob;
-      customer.skills['education'] = dialogRef.componentInstance.data.skillEducation;
-      customer.skills['languages'] = dialogRef.componentInstance.data.skillLanguages;
-
-      console.log('here->',customer)
-
       if (result === 1) {
+        
+        console.log(dialogRef.componentInstance.data)
+        customer.name = dialogRef.componentInstance.data.name
+        customer.age = dialogRef.componentInstance.data.age
+        customer.gender = dialogRef.componentInstance.data.gender
+        customer.email = dialogRef.componentInstance.data.email
+        customer.balance = dialogRef.componentInstance.data.balance
+        customer.company = dialogRef.componentInstance.data.company
+        customer.address = dialogRef.componentInstance.data.address
+        customer.phone = dialogRef.componentInstance.data.phone
+        customer.salary = dialogRef.componentInstance.data.salary
+
+        //Map skills
+        customer.skills = new Map();
+        customer.skills['job'] = dialogRef.componentInstance.data.skillJob;
+        customer.skills['education'] = dialogRef.componentInstance.data.skillEducation;
+        customer.skills['languages'] = dialogRef.componentInstance.data.skillLanguages;
+
+        console.log('here->',customer)
+
         this.bankService.create(customer).subscribe(
           (customer) => {
             this.retrieveCustomers();
-            console.log(customer);
+            console.log('Customer added:',customer);
           })
       }
     });
