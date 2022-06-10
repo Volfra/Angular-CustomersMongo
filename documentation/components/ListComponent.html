@@ -1,0 +1,1347 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-customers-mongo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-customers-mongo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/list/list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./list.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#customer_id" >customer_id</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#customers" >customers</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#sort" >sort</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addCustomer" >addCustomer</a>
+                            </li>
+                            <li>
+                                <a href="#applyFilter" >applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#deleteCustomer" >deleteCustomer</a>
+                            </li>
+                            <li>
+                                <a href="#editCustomer" >editCustomer</a>
+                            </li>
+                            <li>
+                                <a href="#moreCustomer" >moreCustomer</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#query1" >query1</a>
+                            </li>
+                            <li>
+                                <a href="#retrieveCustomers" >retrieveCustomers</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(bankService: <a href="../injectables/BankService.html" target="_self">BankService</a>, dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/list/list.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>bankService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BankService.html" target="_self" >BankService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addCustomer"></a>
+                    <span class="name">
+                        <span ><b>addCustomer</b></span>
+                        <a href="#addCustomer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addCustomer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/app/components/list/list.component.ts:159</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilter"></a>
+                    <span class="name">
+                        <span ><b>applyFilter</b></span>
+                        <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>applyFilter(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/components/list/list.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteCustomer"></a>
+                    <span class="name">
+                        <span ><b>deleteCustomer</b></span>
+                        <a href="#deleteCustomer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteCustomer(customer: <a href="../classes/Customer.html" target="_self">Customer</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/app/components/list/list.component.ts:141</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>customer</td>
+                                    <td>
+                                                <code><a href="../classes/Customer.html" target="_self" >Customer</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editCustomer"></a>
+                    <span class="name">
+                        <span ><b>editCustomer</b></span>
+                        <a href="#editCustomer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editCustomer(customer: <a href="../classes/Customer.html" target="_self">Customer</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/components/list/list.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>customer</td>
+                                    <td>
+                                                <code><a href="../classes/Customer.html" target="_self" >Customer</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="moreCustomer"></a>
+                    <span class="name">
+                        <span ><b>moreCustomer</b></span>
+                        <a href="#moreCustomer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>moreCustomer(customer: <a href="../classes/Customer.html" target="_self">Customer</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/components/list/list.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>customer</td>
+                                    <td>
+                                                <code><a href="../classes/Customer.html" target="_self" >Customer</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/components/list/list.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="query1"></a>
+                    <span class="name">
+                        <span ><b>query1</b></span>
+                        <a href="#query1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>query1()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">src/app/components/list/list.component.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retrieveCustomers"></a>
+                    <span class="name">
+                        <span ><b>retrieveCustomers</b></span>
+                        <a href="#retrieveCustomers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>retrieveCustomers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/components/list/list.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customer_id"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>customer_id</b></span>
+                        <a href="#customer_id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/list/list.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>customers</b></span>
+                        <a href="#customers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Customer.html" target="_self" >Customer[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/list/list.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Customer.html" target="_self" >MatTableDataSource&lt;Customer&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/list/list.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    &#x27;name&#x27;,
+    &#x27;age&#x27;,
+    &#x27;gender&#x27;,
+    &#x27;email&#x27;,
+    &#x27;balance&#x27;,
+    &#x27;actions&#x27;,
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/list/list.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/list/list.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSort</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/list/list.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { OnInit } from &#x27;@angular/core&#x27;;
+import { Component, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { Customer } from &#x27;src/app/model/customer&#x27;;
+import { BankService } from &#x27;src/app/services/bank.service&#x27;;
+import { AddComponent } from &#x27;../dialog/add/add.component&#x27;;
+import { DeleteComponent } from &#x27;../dialog/delete/delete.component&#x27;;
+import { EditComponent } from &#x27;../dialog/edit/edit.component&#x27;;
+import { MoreComponent } from &#x27;../dialog/more/more.component&#x27;;
+import { Query1Component } from &#x27;../dialog/query1/query1.component&#x27;;
+
+@Component({
+  selector: &#x27;app-list&#x27;,
+  templateUrl: &#x27;./list.component.html&#x27;,
+  styleUrls: [&#x27;./list.component.css&#x27;]
+})
+
+export class ListComponent implements OnInit {
+
+  displayedColumns: string[] &#x3D; [
+    &#x27;name&#x27;,
+    &#x27;age&#x27;,
+    &#x27;gender&#x27;,
+    &#x27;email&#x27;,
+    &#x27;balance&#x27;,
+    &#x27;actions&#x27;,
+  ];
+  /*
+  &#x27;isActive&#x27;,
+  &#x27;company&#x27;,
+  &#x27;phone&#x27;,
+  &#x27;address&#x27;,
+  &#x27;salary&#x27;];*/
+
+  dataSource: MatTableDataSource&lt;Customer&gt;;
+  public customers: Customer[];
+  public customer_id: any;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private bankService: BankService, private dialog: MatDialog) {
+
+  }
+
+  ngOnInit(): void {
+    this.retrieveCustomers();
+  }
+
+  retrieveCustomers() {
+
+    const input &#x3D; document.getElementById(&#x27;searchTxt&#x27;) as HTMLInputElement | null;
+    if (input !&#x3D; null)
+      input.value &#x3D; &#x27;&#x27;
+
+    this.bankService.getAll().subscribe(
+      (customers: Customer[]) &#x3D;&gt; {
+        this.customers &#x3D; customers
+        this.dataSource &#x3D; new MatTableDataSource(customers);
+        this.dataSource.paginator &#x3D; this.paginator;
+        this.dataSource.sort &#x3D; this.sort;
+        this.dataSource.filterPredicate &#x3D; (data: Customer, filter: string) &#x3D;&gt; {
+          return data.name.includes(filter);
+        };
+      }
+    );
+
+  }
+
+  applyFilter(event: Event) {
+    const filterValue &#x3D; (event.target as HTMLInputElement).value;
+    this.dataSource.filter &#x3D; filterValue.trim();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  moreCustomer(customer: Customer) {
+
+    const dialogRef &#x3D; this.dialog.open(MoreComponent, {
+      width: &#x27;250px&#x27;,
+      data: {
+        company: customer.company,
+        address: customer.address,
+        phone: customer.phone,
+        salary: customer.salary,
+        skills: customer.skills
+      }
+    });
+
+  }
+
+  editCustomer(customer: Customer) {
+
+    const dialogRef &#x3D; this.dialog.open(EditComponent, {
+      width: &#x27;250px&#x27;,
+      data: {
+        name: customer.name,
+        age: customer.age,
+        gender: customer.gender,
+        email: customer.email,
+        balance: customer.balance,
+        company: customer.company,
+        address: customer.address,
+        phone: customer.phone,
+        salary: customer.salary,
+        skills: customer.skills,
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+
+      if (result &#x3D;&#x3D;&#x3D; 1) {
+
+        customer.name &#x3D; dialogRef.componentInstance.data.name
+        customer.age &#x3D; dialogRef.componentInstance.data.age
+        customer.gender &#x3D; dialogRef.componentInstance.data.gender
+        customer.email &#x3D; dialogRef.componentInstance.data.email
+        customer.balance &#x3D; dialogRef.componentInstance.data.balance
+        customer.company &#x3D; dialogRef.componentInstance.data.company
+        customer.address &#x3D; dialogRef.componentInstance.data.address
+        customer.phone &#x3D; dialogRef.componentInstance.data.phone
+        customer.salary &#x3D; dialogRef.componentInstance.data.salary
+        customer.skills &#x3D; dialogRef.componentInstance.data.skills
+
+        this.bankService.update(customer._id, customer).subscribe(
+          (customer) &#x3D;&gt; {
+            console.log(&#x27;Customer updated:&#x27;, customer);
+          })
+      }
+
+    });
+
+  }
+
+
+  deleteCustomer(customer: Customer) {
+
+    this.customer_id &#x3D; customer._id;
+    const dialogRef &#x3D; this.dialog.open(DeleteComponent, { data: { name: customer.name } });
+
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+      if (result &#x3D;&#x3D;&#x3D; 1) {
+        this.bankService.delete(customer._id).subscribe(
+          (customer) &#x3D;&gt; {
+            this.retrieveCustomers();
+            console.log(&#x27;Customer deleted:&#x27;, customer);
+          })
+      }
+    });
+
+  }
+
+
+  addCustomer() {
+
+    const dialogRef &#x3D; this.dialog.open(AddComponent, {
+      width: &#x27;250px&#x27;,
+      data: {
+        name: &#x27;&#x27;,
+        age: &#x27;&#x27;,
+        gender: &#x27;&#x27;,
+        email: &#x27;&#x27;,
+        balance: &#x27;&#x27;,
+        company: &#x27;&#x27;,
+        address: &#x27;&#x27;,
+        phone: &#x27;&#x27;,
+        salary: &#x27;&#x27;,
+        skillJob: &#x27;&#x27;,
+        skillEducation: &#x27;&#x27;,
+        skillLanguages: &#x27;&#x27;,
+      }
+    });
+
+    var customer: Customer &#x3D; new Customer();
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+
+      if (result &#x3D;&#x3D;&#x3D; 1) {
+
+        console.log(dialogRef.componentInstance.data)
+        customer.name &#x3D; dialogRef.componentInstance.data.name
+        customer.age &#x3D; dialogRef.componentInstance.data.age
+        customer.gender &#x3D; dialogRef.componentInstance.data.gender
+        customer.email &#x3D; dialogRef.componentInstance.data.email
+        customer.balance &#x3D; dialogRef.componentInstance.data.balance
+        customer.company &#x3D; dialogRef.componentInstance.data.company
+        customer.address &#x3D; dialogRef.componentInstance.data.address
+        customer.phone &#x3D; dialogRef.componentInstance.data.phone
+        customer.salary &#x3D; dialogRef.componentInstance.data.salary
+
+        //Map skills
+        customer.skills &#x3D; new Map();
+        customer.skills[&#x27;job&#x27;] &#x3D; dialogRef.componentInstance.data.skillJob;
+        customer.skills[&#x27;education&#x27;] &#x3D; dialogRef.componentInstance.data.skillEducation;
+        customer.skills[&#x27;languages&#x27;] &#x3D; dialogRef.componentInstance.data.skillLanguages;
+
+        this.bankService.create(customer).subscribe(
+          (customer) &#x3D;&gt; {
+            this.retrieveCustomers();
+            console.log(&#x27;Customer added:&#x27;, customer);
+          })
+      }
+    });
+  }
+
+  query1() {
+
+    const dialogRef &#x3D; this.dialog.open(Query1Component, {
+      width: &#x27;250px&#x27;,
+      data: {
+        minValue: 0,
+        maxValue: 999999,
+      }
+    });
+
+    const input &#x3D; document.getElementById(&#x27;searchTxt&#x27;) as HTMLInputElement | null;
+    if (input !&#x3D; null)
+      input.value &#x3D; &#x27;&#x27;
+      
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+      if (result &#x3D;&#x3D;&#x3D; 1) {
+
+        this.bankService.query1(dialogRef.componentInstance.data.minValue, 
+                                dialogRef.componentInstance.data.maxValue).subscribe(
+          (customers: Customer[]) &#x3D;&gt; {
+            this.customers &#x3D; customers
+            this.dataSource &#x3D; new MatTableDataSource(customers);
+            this.dataSource.paginator &#x3D; this.paginator;
+            this.dataSource.sort &#x3D; this.sort;
+            this.dataSource.filterPredicate &#x3D; (data: Customer, filter: string) &#x3D;&gt; {
+              return data.name.includes(filter);
+            };
+          }
+        );
+      }
+    });
+
+  }
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-placeholder&gt;
+
+&lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+  &lt;mat-label&gt;Filter Name&lt;/mat-label&gt;
+  &lt;input matInput id&#x3D;&#x27;searchTxt&#x27; (keyup)&#x3D;&quot;applyFilter($event)&quot; placeholder&#x3D;&quot;Criteria Case Sensitive&quot; #input&gt;
+&lt;/mat-form-field&gt;
+
+&lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+  &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort &gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Name &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.name}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;age&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Age &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.age}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;gender&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Gender &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.gender}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;email&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Email &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.email}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;balance&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Balance &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.balance}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;actions&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;
+        &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;addCustomer()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Add&quot;&gt;add&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;query1()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Search&quot;&gt;search&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/th&gt;
+
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+
+          &lt;button mat-icon-button color&#x3D;&quot;basic&quot; (click)&#x3D;&quot;moreCustomer(element)&quot;&gt;
+            &lt;mat-icon aria-label&#x3D;&quot;More&quot;&gt;more&lt;/mat-icon&gt;
+          &lt;/button&gt;
+
+          &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;editCustomer(element)&quot;&gt;
+            &lt;mat-icon aria-label&#x3D;&quot;Edit&quot;&gt;edit&lt;/mat-icon&gt;
+          &lt;/button&gt;
+  
+          &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;deleteCustomer(element)&quot;&gt;
+            &lt;mat-icon aria-label&#x3D;&quot;Delete&quot;&gt;delete&lt;/mat-icon&gt;
+          &lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+    &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+
+    &lt;!-- Row shown when there is no matching data. --&gt;
+    &lt;tr class&#x3D;&quot;mat-row&quot; *matNoDataRow&gt;
+      &lt;td class&#x3D;&quot;mat-cell&quot; colspan&#x3D;&quot;4&quot;&gt;No data matching the filter &quot;{{input.value}}&quot;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[5, 10, 25, 100]&quot; aria-label&#x3D;&quot;Select page of users&quot;&gt;&lt;/mat-paginator&gt;
+&lt;/div&gt;
+
+&lt;/mat-placeholder&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./list.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 13%;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-placeholder><mat-form-field appearance="standard">  <mat-label>Filter Name</mat-label>  <input matInput id=\'searchTxt\' (keyup)="applyFilter($event)" placeholder="Criteria Case Sensitive" #input></mat-form-field><div class="mat-elevation-z8">  <table mat-table [dataSource]="dataSource" matSort >    <ng-container matColumnDef="name">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>      <td mat-cell *matCellDef="let row"> {{row.name}} </td>    </ng-container>    <ng-container matColumnDef="age">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>      <td mat-cell *matCellDef="let row"> {{row.age}} </td>    </ng-container>    <ng-container matColumnDef="gender">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>      <td mat-cell *matCellDef="let row"> {{row.gender}} </td>    </ng-container>    <ng-container matColumnDef="email">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>      <td mat-cell *matCellDef="let row"> {{row.email}} </td>    </ng-container>    <ng-container matColumnDef="balance">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Balance </th>      <td mat-cell *matCellDef="let row"> {{row.balance}} </td>    </ng-container>    <ng-container matColumnDef="actions">      <th mat-header-cell *matHeaderCellDef>        <button mat-icon-button color="primary" (click)="addCustomer()">          <mat-icon aria-label="Add">add</mat-icon>        </button>        <button mat-icon-button color="primary" (click)="query1()">          <mat-icon aria-label="Search">search</mat-icon>        </button>      </th>      <td mat-cell *matCellDef="let element">          <button mat-icon-button color="basic" (click)="moreCustomer(element)">            <mat-icon aria-label="More">more</mat-icon>          </button>          <button mat-icon-button color="primary" (click)="editCustomer(element)">            <mat-icon aria-label="Edit">edit</mat-icon>          </button>            <button mat-icon-button color="warn" (click)="deleteCustomer(element)">            <mat-icon aria-label="Delete">delete</mat-icon>          </button>      </td>    </ng-container>    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>    <!-- Row shown when there is no matching data. -->    <tr class="mat-row" *matNoDataRow>      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>    </tr>  </table>  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator></div></mat-placeholder></div>'
+    var COMPONENTS = [{'name': 'AddComponent', 'selector': 'app-add'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DeleteComponent', 'selector': 'app-delete'},{'name': 'EditComponent', 'selector': 'app-edit'},{'name': 'ListComponent', 'selector': 'app-list'},{'name': 'MoreComponent', 'selector': 'app-more'},{'name': 'Query1Component', 'selector': 'app-query1'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
