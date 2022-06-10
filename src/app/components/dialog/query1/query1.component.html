@@ -1,0 +1,24 @@
+<div class="container">
+    <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input [formControl]="integerControlMin" class="form-control" maxlength="6" [(ngModel)]="data.minValue" placeholder="Minimum value" name="minValue" required>
+            <mat-error *ngIf="integerControlMin.invalid">{{getErrorMessageIntegerMin()}}</mat-error>
+        </mat-form-field>
+    </div>    
+
+    <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input [formControl]="integerControlMax" class="form-control" maxlength="6" [(ngModel)]="data.maxValue" placeholder="Maximum value" name="maxValue" required>
+            <mat-error *ngIf="integerControlMax.invalid">{{getErrorMessageIntegerMax()}}</mat-error>
+        </mat-form-field>
+    </div>    
+
+    <div mat-dialog-actions>
+        <button mat-button type="submit" [disabled]="!integerControlMin.valid || !integerControlMax.valid" [mat-dialog-close]="1" (click)="save()">Save</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>  
+      </div>
+    </form>
+  </div>
+

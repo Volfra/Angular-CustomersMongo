@@ -10,6 +10,7 @@ import { AddComponent } from '../dialog/add/add.component';
 import { DeleteComponent } from '../dialog/delete/delete.component';
 import { EditComponent } from '../dialog/edit/edit.component';
 import { MoreComponent } from '../dialog/more/more.component';
+import { Query1Component } from '../dialog/query1/query1.component';
 
 @Component({
   selector: 'app-list',
@@ -52,9 +53,9 @@ export class ListComponent implements OnInit {
   retrieveCustomers() {
 
     const input = document.getElementById('searchTxt') as HTMLInputElement | null;
-    if (input!=null) 
+    if (input != null)
       input.value = ''
-  
+
     this.bankService.getAll().subscribe(
       (customers: Customer[]) => {
         this.customers = customers
@@ -112,7 +113,7 @@ export class ListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      
+
       if (result === 1) {
 
         customer.name = dialogRef.componentInstance.data.name
@@ -120,16 +121,16 @@ export class ListComponent implements OnInit {
         customer.gender = dialogRef.componentInstance.data.gender
         customer.email = dialogRef.componentInstance.data.email
         customer.balance = dialogRef.componentInstance.data.balance
-        customer.company = dialogRef.componentInstance.data.company 
+        customer.company = dialogRef.componentInstance.data.company
         customer.address = dialogRef.componentInstance.data.address
         customer.phone = dialogRef.componentInstance.data.phone
         customer.salary = dialogRef.componentInstance.data.salary
         customer.skills = dialogRef.componentInstance.data.skills
 
         this.bankService.update(customer._id, customer).subscribe(
-            (customer) => {
-              console.log('Customer updated:',customer);
-            })
+          (customer) => {
+            console.log('Customer updated:', customer);
+          })
       }
 
     });
@@ -147,7 +148,7 @@ export class ListComponent implements OnInit {
         this.bankService.delete(customer._id).subscribe(
           (customer) => {
             this.retrieveCustomers();
-            console.log('Customer deleted:',customer);
+            console.log('Customer deleted:', customer);
           })
       }
     });
@@ -156,7 +157,7 @@ export class ListComponent implements OnInit {
 
 
   addCustomer() {
-    
+
     const dialogRef = this.dialog.open(AddComponent, {
       width: '250px',
       data: {
@@ -175,11 +176,11 @@ export class ListComponent implements OnInit {
       }
     });
 
-    var customer : Customer = new Customer();
+    var customer: Customer = new Customer();
     dialogRef.afterClosed().subscribe(result => {
 
       if (result === 1) {
-        
+
         console.log(dialogRef.componentInstance.data)
         customer.name = dialogRef.componentInstance.data.name
         customer.age = dialogRef.componentInstance.data.age
@@ -200,12 +201,45 @@ export class ListComponent implements OnInit {
         this.bankService.create(customer).subscribe(
           (customer) => {
             this.retrieveCustomers();
-            console.log('Customer added:',customer);
+            console.log('Customer added:', customer);
           })
       }
     });
   }
 
-  query1() { }
+  query1() {
+
+    const dialogRef = this.dialog.open(Query1Component, {
+      width: '250px',
+      data: {
+        minValue: 0,
+        maxValue: 999999,
+      }
+    });
+
+    const input = document.getElementById('searchTxt') as HTMLInputElement | null;
+    if (input != null)
+      input.value = ''
+      
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 1) {
+
+        this.bankService.query1(dialogRef.componentInstance.data.minValue, 
+                                dialogRef.componentInstance.data.maxValue).subscribe(
+          (customers: Customer[]) => {
+            this.customers = customers
+            this.dataSource = new MatTableDataSource(customers);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+            this.dataSource.filterPredicate = (data: Customer, filter: string) => {
+              return data.name.includes(filter);
+            };
+          }
+        );
+      }
+    });
+
+  }
 
 }
+

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer } from '../model/customer';
 
-const baseUrl = 'http://localhost:8080/api/v1/Customers';
+const baseUrl = 'http://127.0.0.1:8080/api/v1/Customers';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,10 @@ export class BankService {
 
   delete(id: string): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
+  }
+
+  query1(paramMin: number, paramMax: number): Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${baseUrl}Q1/${paramMin}/${paramMax}`);
   }
 
 }

@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { EditComponent } from './components/dialog/edit/edit.component';
 import { MoreComponent } from './components/dialog/more/more.component';
 import { AddComponent } from './components/dialog/add/add.component';
+import { Query1Component } from './components/dialog/query1/query1.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AddComponent } from './components/dialog/add/add.component';
     DeleteComponent,
     EditComponent,
     MoreComponent,
-    AddComponent
+    AddComponent,
+    Query1Component
   ],
   imports: [
     BrowserModule,
